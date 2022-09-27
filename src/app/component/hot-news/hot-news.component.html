@@ -1,0 +1,6 @@
+<div class="hot-news"[@SlideHorizontal]="counter">
+  <ng-container  *ngFor="let news of listNews;let i=index">
+    <p  *ngIf="i===counter">{{news}}</p>
+  </ng-container>
+</div>
+
