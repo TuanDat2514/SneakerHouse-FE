@@ -10,7 +10,6 @@
 .list{
   display: grid;
   grid-template-columns: auto auto auto auto;
-  margin-top: 10%;
   column-gap: 10px;
   row-gap: 10px;
 }
@@ -32,3 +31,30 @@
   position: absolute;
   top:100%;
 }
+.price{
+  font-weight: bold;
+}
+.li{
+  list-style-type: none!important;
+  display: inline;
+  padding-left: 20px;
+  padding-right:20px;
+}
+.filter{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-filter:hover{
+  cursor: pointer;
+}
+.btn-filter button{
+  width: 100px;
+  padding-right: 30px;
+  border-radius: 10px;
+}
+.btn-filter img{
+  position: absolute;
+  right: 30px;
+  padding-top: 3px;
+}
+
