@@ -1,6 +1,7 @@
 .product{
   width: 100%;
   height: auto;
+  max-height: 1700px;
   padding-bottom: 10%;
 }
 .body-product{

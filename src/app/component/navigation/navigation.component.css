@@ -88,6 +88,9 @@
   .search{
     display: none;
   }
+  .body a{
+    width: 30%;
+  }
 }
 
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Route, Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-list-product',
@@ -7,16 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routes:Router) {
+  }
 
   ngOnInit(): void {
   }
-  openFilter(){
-    let i=document.getElementById("btn-filter") as HTMLElement;
-    i.style.width="400px";
+
+  openFilter() {
+    let i = document.getElementById("btn-filter") as HTMLElement;
+    i.style.width = "400px";
   }
-  closeFilter(){
-    let i=document.getElementById("btn-filter") as HTMLElement;
-    i.style.width="0px";
+
+  closeFilter() {
+    let i = document.getElementById("btn-filter") as HTMLElement;
+    i.style.width = "0px";
+  }
+
+  gotoDetail() {
+    this.routes.navigate(['/detail-product']);
   }
 }
