@@ -1,0 +1,13 @@
+.taskbar{
+  background: black;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.task{
+  margin-top: 10px;
+  margin-right: 30px;
+}
+

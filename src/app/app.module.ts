@@ -7,13 +7,21 @@ import { NavigationComponent } from './component/navigation/navigation.component
 import { ProductComponent } from './pages/product/product.component';
 import { HotNewsComponent } from './component/hot-news/hot-news.component';
 import {SwiperModule} from "swiper/angular";
+import { FilterProductComponent } from './component/filter-product/filter-product.component';
+import { ListProductComponent } from './component/list-product/list-product.component';
+import { TaskbarComponent } from './component/taskbar/taskbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ProductComponent,
-    HotNewsComponent
+    HotNewsComponent,
+    FilterProductComponent,
+    ListProductComponent,
+    TaskbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

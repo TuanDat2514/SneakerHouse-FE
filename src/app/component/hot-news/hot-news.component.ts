@@ -21,7 +21,6 @@ export class HotNewsComponent implements OnInit {
       if(this.counter>this.listNews.length-1){
         this.counter=0;
       }
-      console.log(this.counter)
     },5000);
   }
 

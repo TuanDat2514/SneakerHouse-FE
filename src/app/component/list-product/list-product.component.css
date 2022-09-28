@@ -1,0 +1,34 @@
+.item{
+  width: 300px;
+  height: 450px;
+  border: 1px transparent solid;
+}
+.item:hover{
+  border: 1px solid black;
+  cursor: pointer;
+}
+.list{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 10%;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.item-img{
+  width: 300px;
+  object-fit: cover;
+}
+.item-info{
+  text-align: center;
+}
+.status{
+  color: orange;
+  padding: 10px;
+}
+.info{
+  margin-top: 10%;
+}
+.icon-favorive{
+  position: absolute;
+  top:100%;
+}
