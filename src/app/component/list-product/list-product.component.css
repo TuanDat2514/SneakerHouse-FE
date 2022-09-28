@@ -65,6 +65,17 @@
 .category{
   height: auto;
 }
+.drawer-filter{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: aqua;
+  z-index: 2;
+  overflow-x: hidden;
+  transition: .5s;
+}
 @media screen and (max-width: 414px ){
   .list{
     display: grid;

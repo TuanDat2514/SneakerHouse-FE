@@ -4,9 +4,12 @@
     <li class="li" style="border-right: #919090 1px solid">Nam</li>
     <li class="li">Nữ</li>
   </ul>
-  <div class="btn-filter">
+  <div class="btn-filter" (click)="openFilter()">
     <button class="">Lọc</button>
     <img src="assets/img/icons8-filter-24.png">
+  </div>
+  <div id="btn-filter" class="drawer-filter">
+    <button (click)="closeFilter()">tắt</button>
   </div>
 </div>
 <div class="list">

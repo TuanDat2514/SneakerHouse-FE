@@ -11,5 +11,12 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  openFilter(){
+    let i=document.getElementById("btn-filter") as HTMLElement;
+    i.style.width="400px";
+  }
+  closeFilter(){
+    let i=document.getElementById("btn-filter") as HTMLElement;
+    i.style.width="0px";
+  }
 }
