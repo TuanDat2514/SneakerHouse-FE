@@ -27,6 +27,9 @@
 .info{
   margin-top: 10%;
 }
+.span{
+
+}
 .icon-favorive{
   position: absolute;
   top:100%;
@@ -35,6 +38,8 @@
   font-weight: bold;
 }
 .li{
+  height: 50px;
+  width: 90px;
   list-style-type: none!important;
   display: inline;
   padding-left: 20px;
@@ -56,5 +61,23 @@
   position: absolute;
   right: 30px;
   padding-top: 3px;
+}
+.category{
+  height: auto;
+}
+@media screen and (max-width: 414px ){
+  .list{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    width: 100%;
+  }
+  .item{
+    width: 100%!important;
+    height: auto;
+  }
+  .item-img{
+    width: 100%;
+  }
 }
 

@@ -5,6 +5,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 30px;
+  width: 100%;
 }
 .task{
   margin-top: 10px;

@@ -1,0 +1,86 @@
+.detail-product{
+  width: 100%;
+  height: auto;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  display: flex;
+  margin-left: 15px;
+}
+.detail-img{
+  flex: 1;
+
+}
+.detail-info{
+  flex: 1;
+  padding-left: 70px;
+  margin-right: 50px;
+}
+.img img{
+  width: 100%;
+  padding-bottom: 15px;
+ }
+.sub-img{
+  display: flex;
+  gap: 10px;
+}
+.sub-img img{
+  width: 20%;
+}
+.info p{
+  font-size: 30px;
+  font-weight: bold;
+}
+.info{
+  padding-bottom: 50px;
+}
+.price{
+  color: orange;
+  font-size: 24px;
+  padding-top: 15px;
+}
+.list-size{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 5px;
+  row-gap: 5px;
+  padding-bottom: 50px;
+}
+.size{
+  padding: 5px 10px 10px 5px;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+}
+.add-favorite{
+  display: flex;
+  gap: 5%;
+  height: 10%;
+}
+.btn-add{
+  width: 80%;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.btn-favorite{
+  flex: 1;
+  background: black!important;
+  border-radius: 5px;
+}
+.btn-checkout button{
+  width: 100%;
+  background: orange;
+  font-size: 24px;
+  font-weight: bold;
+  height: 60px;
+  border-radius: 5px;
+}
+.btn-checkout{
+  margin-top: 15px;
+  height: auto;
+}
+

@@ -11,6 +11,7 @@ import { FilterProductComponent } from './component/filter-product/filter-produc
 import { ListProductComponent } from './component/list-product/list-product.component';
 import { TaskbarComponent } from './component/taskbar/taskbar.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './component/footer/footer.component';
     FilterProductComponent,
     ListProductComponent,
     TaskbarComponent,
-    FooterComponent
+    FooterComponent,
+    DetailProductComponent
   ],
   imports: [
     BrowserModule,
