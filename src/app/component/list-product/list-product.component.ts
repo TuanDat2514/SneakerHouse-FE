@@ -32,7 +32,8 @@ export class ListProductComponent implements OnInit {
     i.style.width = "0px";
   }
 
-  gotoDetail() {
+  gotoDetail(item:any) {
+    this.productService.product$.next(item);
     this.routes.navigate(['/detail-product']);
   }
   changeCategory(cate:string){
