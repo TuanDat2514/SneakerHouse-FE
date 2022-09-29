@@ -1,16 +1,19 @@
 <div class="filter">
   <ul class="category">
-    <li class="li" style="border-right: #919090 1px solid">Tất cả</li>
-    <li class="li" style="border-right: #919090 1px solid">Nam</li>
-    <li class="li">Nữ</li>
+    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='all'" (click)="changeCategory('all')">Tất cả</li>
+    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='men'" (click)="changeCategory('men')">Nam</li>
+    <li class="li" [class.selectedCategory]="category==='women'" (click)="changeCategory('women')">Nữ</li>
   </ul>
   <div class="btn-filter" (click)="openFilter()">
     <button class="">Lọc</button>
     <img src="assets/img/icons8-filter-24.png">
   </div>
   <div id="btn-filter" class="drawer-filter">
-    <button (click)="closeFilter()">tắt</button>
+    <div>
+    <app-filter-product></app-filter-product>
+    </div>
   </div>
+  <div class="overlay" id="overlay"></div>
 </div>
 <div class="list">
   <div class="item" (click)="gotoDetail()">
@@ -20,7 +23,7 @@
     <img class="item-img" src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
     <div class="item-info">
       <div class="info">
-          <h5>Vans Fog</h5>
+          <h5 class="info-name">Vans Fog</h5>
           <h6>Trắng</h6>
           <h5 class="price">400.000 VND</h5>
       </div>
