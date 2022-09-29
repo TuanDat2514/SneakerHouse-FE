@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Route, Router, Routes} from "@angular/router";
+import {ProductService} from "../../_service/product/product.service";
 
 @Component({
   selector: 'app-list-product',
@@ -7,11 +8,15 @@ import {Route, Router, Routes} from "@angular/router";
   styleUrls: ['./list-product.component.css']
 })
 export class ListProductComponent implements OnInit {
-
-  constructor(private routes:Router) {
+  listProduct!:any[];
+  constructor(private routes:Router,private productService:ProductService) {
   }
 
   ngOnInit(): void {
+    this.productService.getListProduct().subscribe(res=>{
+      this.listProduct=res;
+      console.log(this.listProduct);
+    })
   }
 
   openFilter() {

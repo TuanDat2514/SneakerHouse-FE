@@ -12,6 +12,7 @@ import { ListProductComponent } from './component/list-product/list-product.comp
 import { TaskbarComponent } from './component/taskbar/taskbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DetailProductComponent } from './pages/detail-product/detail-product.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SwiperModule
+    SwiperModule,
+    HttpClientModule
   ],
   providers: [
   ],
