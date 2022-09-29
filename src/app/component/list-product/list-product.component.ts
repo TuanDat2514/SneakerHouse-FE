@@ -9,8 +9,9 @@ import {ProductService} from "../../_service/product/product.service";
 })
 export class ListProductComponent implements OnInit {
   listProduct!:any[];
-  constructor(private routes:Router,private productService:ProductService) {
-  }
+  constructor(private routes:Router,private productService:ProductService) {}
+  category='all';
+
 
   ngOnInit(): void {
     this.productService.getListProduct().subscribe(res=>{
@@ -22,6 +23,8 @@ export class ListProductComponent implements OnInit {
   openFilter() {
     let i = document.getElementById("btn-filter") as HTMLElement;
     i.style.width = "400px";
+    let o = document.getElementById("overlay") as HTMLElement;
+    o.style.display = "block";
   }
 
   closeFilter() {
@@ -31,5 +34,8 @@ export class ListProductComponent implements OnInit {
 
   gotoDetail() {
     this.routes.navigate(['/detail-product']);
+  }
+  changeCategory(cate:string){
+    this.category=cate;
   }
 }

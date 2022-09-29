@@ -11,5 +11,10 @@ export class FilterProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  closeFilter() {
+    let i = document.getElementById("btn-filter") as HTMLElement;
+    i.style.width = "0px";
+    let o = document.getElementById("overlay") as HTMLElement;
+    o.style.display = "none";
+  }
 }

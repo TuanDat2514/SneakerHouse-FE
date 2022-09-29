@@ -2,7 +2,7 @@
   display: flex;
   height: 150px;
   box-sizing: border-box;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
 }
 .logo{
@@ -75,6 +75,9 @@
   left: 0;
   text-align: center;
   background: #919090;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 .menu-item:hover{
   color: orange!important;
@@ -83,6 +86,53 @@
 .menu-item:hover  .dropdown-content{
   display: block;
   color: black;
+}
+.drop-col{
+  left: 0;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: white;
+  width: 20%;
+  padding: 15px 0px 15px 0px;
+  opacity: 70%;
+}
+.drop-col:hover{
+  opacity: 1;
+  transition: .5s;
+}
+.drop-img:hover{
+  opacity: 100%;
+  transition: .5s;
+}
+.drop-img{
+  width: 100%;
+ position: relative;
+  height: 300px;
+  object-fit: cover;
+  /*opacity: 70%;*/
+}
+.cate{
+  padding:0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.li-col a{
+  font-size: 14px!important;
+  font-weight: lighter;
+ }
+.li-col:hover{
+  text-decoration-line: underline;
+  color: orange;
+}
+.brand-shop{
+  font-weight: bold;font-family: 'Black Ops One', cursive;
+  color: rgba(0, 0, 0, 0.6);
+}
+.sub-brand-shop{
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.45);
 }
 @media screen and (max-width: 414px) {
   .search{
