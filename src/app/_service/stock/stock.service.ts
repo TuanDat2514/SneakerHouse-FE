@@ -10,6 +10,6 @@ export class StockService {
 
   constructor(private http:HttpClient) { }
   getStockbyProduct(idProduct:string):Observable<any>{
-    return this.http.get(URL.URL+environment.GETSTOCKALL+idProduct);
+    return this.http.get(URL.URL+environment.GETSTOCKPRODUCT+idProduct);
   }
 }

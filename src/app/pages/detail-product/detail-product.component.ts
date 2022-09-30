@@ -35,12 +35,12 @@ export class DetailProductComponent implements OnInit {
       //this.productStock=res;
       for(let i=0;i<res.length;i++){
         let a={ product:'',size:0, gender:0, amount:0,isEmpty:false}
-        a.product=res[i][0];
-        a.size=res[i][1];
-        a.gender=res[i][2];
-        a.amount=res[i][3];
-        if(res[i][3]==0){
-          a.isEmpty=true;
+          a.product=res[i][0];
+          a.size=res[i][1];
+          a.gender=res[i][2];
+          a.amount=res[i][3];
+          if(res[i][3]==0){
+            a.isEmpty=true;
         }
         this.productStock.push(a);
       }

@@ -14,7 +14,7 @@ export const environment = {
   GETBRANDBYID:"brand/getBrand/",
 
   //stock
-  GETSTOCKALL:"stock/all/"
+  GETSTOCKPRODUCT:"stock/stockProduct/"
 };
 
 
