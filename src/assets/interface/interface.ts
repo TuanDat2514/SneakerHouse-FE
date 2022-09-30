@@ -10,3 +10,10 @@ export interface Product{
   sub_img:string,
   gender:number
 }
+export interface Brand{
+  id_brand:string,
+  brand:string,
+  table_size:string,
+  products:Product[],
+  size:any[]
+}

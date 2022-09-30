@@ -12,20 +12,13 @@
   <div class="detail-info">
     <div class="info">
       <p>{{selectedProduct.name}} - {{selectedProduct.color|uppercase}}</p>
-      <h6>Hợp tác với Jerry Lorenzo vào mùa thu vừa qua, Vans giới thiệu hai bộ sưu tập mới: Vans x Fear of God và Vans x F.O.G. Được tạo ra và thiết kế bởi Jerry Lorenzo, Fear of God được biết đến nhiều nhất với các phong cách sẵn sàng để mặc, với sự nhấn mạnh vào những chi tiết nhỏ bé, sắc sảo nhưng linh hoạt, được thiết kế để phù hợp với tủ quần áo của bất kì ai theo đuổi bất kì lĩnh vực thời trang nào. F.O.G. là sự lặp lại trẻ trung và giá cả phải chăng của Lorenzo về tính thẩm mỹ của Fear of God.</h6>
+      <h6>{{selectedProduct.description}}</h6>
       <h5 class="price">{{selectedProduct.price| currency:'VND':' ':'1.3-3'}} VND</h5>
     </div>
     <div class="select-sỉze">
       <p>Chọn size</p>
       <div class="list-size">
-        <button class="size" disabled>38</button>
-        <button class="size">38.5</button>
-        <button class="size">39</button>
-        <button class="size">40</button>
-        <button class="size">40.5</button>
-        <button class="size">41</button>
-        <button class="size">42</button>
-        <button class="size">42.5</button>
+        <button class="size" *ngFor="let size of productStock" [disabled]="size.isEmpty">{{size?.size}}</button>
       </div>
     </div>
     <div class="add-favorite">
@@ -39,7 +32,7 @@
     </div>
     <div class="size-table">
       <p>Bảng Size</p>
-      <img src="assets/img/1105db6bbf5253d30689901c5f7df611.png">
+      <img [src]="brand?.table_size">
     </div>
   </div>
 </div>

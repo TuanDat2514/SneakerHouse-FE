@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BrandService} from "../../_service/brand/brand.service";
+import {ProductService} from "../../_service/product/product.service";
 
 @Component({
   selector: 'app-filter-product',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private brandSevice:BrandService,private productService:ProductService) { }
 
   ngOnInit(): void {
   }
