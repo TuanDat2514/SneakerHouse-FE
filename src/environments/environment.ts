@@ -1,5 +1,5 @@
 export const URL={
-  URL: "http://10.0.11.103:8080/"
+  URL: "http://localhost:8080/"
 }
 
 
@@ -12,6 +12,7 @@ export const environment = {
 
   //brand
   GETBRANDBYID:"brand/getBrand/",
+  GET_SIZE_BRAND_BY_GENDER:"size/getSizebyGender/",
 
   //stock
   GETSTOCKPRODUCT:"stock/stockProduct/"

@@ -18,7 +18,7 @@
     <div class="select-sỉze">
       <p>Chọn size</p>
       <div class="list-size">
-        <button class="size" *ngFor="let size of productStock" [disabled]="size.isEmpty">{{size?.size}}</button>
+        <button class="size" *ngFor="let size of productStock">{{size?.size}}</button>
       </div>
     </div>
     <div class="add-favorite">

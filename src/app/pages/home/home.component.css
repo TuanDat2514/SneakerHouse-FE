@@ -1,0 +1,69 @@
+.home{
+  padding-bottom: 5%;
+}
+.banner{
+  width: 100%;
+  height: auto;
+}
+.banner-img{
+  width: 100%;
+}
+.banner-img img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+}
+.content-banner{
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  color: white;
+}
+.content-banner button{
+  box-shadow: 5px 4px;
+  background: orange;
+  border: none;
+  padding: 5px 20px 5px 20px;
+}
+.title-content{
+  font-weight: bold;font-family: 'Black Ops One', cursive;
+  text-shadow: 5px 4px black;
+}
+.sub-content{
+
+}
+.header-body{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  padding: 50px;
+  gap: 50px;
+}
+.header-body-left{
+  flex: 1;
+}
+.header-body-right{
+  flex: 1;
+}
+.header-img{
+  height: 500px;
+}
+.description{
+  padding-top:20px ;
+}
+.best-seller{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.item{
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+  margin-left: 15px;
+}
+

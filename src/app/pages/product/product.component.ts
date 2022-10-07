@@ -7,11 +7,11 @@ import {ProductService} from "../../_service/product/product.service";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
+  gender=0;
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-
+    localStorage.setItem('gender',String(this.gender));
   }
 
 }

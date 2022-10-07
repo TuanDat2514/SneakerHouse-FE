@@ -17,7 +17,8 @@ export interface Stock{
 export class DetailProductComponent implements OnInit {
   selectedProduct!:any;
   brand!:any;
-  productStock:any[]=[];
+  productStock!:any;
+  gender=localStorage.getItem('gender');
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
@@ -31,20 +32,33 @@ export class DetailProductComponent implements OnInit {
       this.brand=res;
       console.log(this.brand);
     })
-    this.stockService.getStockbyProduct(this.selectedProduct.id_product).subscribe(res=>{
-      //this.productStock=res;
-      for(let i=0;i<res.length;i++){
-        let a={ product:'',size:0, gender:0, amount:0,isEmpty:false}
-          a.product=res[i][0];
-          a.size=res[i][1];
-          a.gender=res[i][2];
-          a.amount=res[i][3];
-          if(res[i][3]==0){
-            a.isEmpty=true;
-        }
-        this.productStock.push(a);
-      }
-      console.log(this.productStock);
+    // this.stockService.getStockbyProduct(this.selectedProduct.id_product, this.gender).subscribe(res=>{
+    //   //this.productStock=res;
+    //   for(let i=0;i<res.length;i++){
+    //     let a={ product:'',size:0, gender:0, amount:0,isEmpty:false}
+    //       a.product=res[i][0];
+    //       a.size=res[i][1];
+    //       a.gender=res[i][2];
+    //       a.amount=res[i][3];
+    //       if(res[i][3]==0){
+    //         a.isEmpty=true;
+    //     }
+    //     this.productStock.push(a);
+    //   }
+    // })
+    this.brandService.getSizeBrand(this.selectedProduct.id_brand,Number(this.gender)).subscribe(res=>{
+      this.productStock=res;
+      //   for(let i=0;i<this.productStock.length ;i++){
+      //     let a={id_brand:'',size:0, gender:0,isEmpty:false}
+      //       a.id_brand=this.productStock[i];
+      //       a.size=this.productStock[i];
+      //       a.gender=this.productStock[i];
+      //       if(res[i][3]==0){
+      //         a.isEmpty=true;
+      //     }
+      //     this.productStock.push(a);
+      //   }
+      // console.log(res)
     })
 
   }

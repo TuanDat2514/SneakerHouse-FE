@@ -79,6 +79,10 @@
   padding-right: 15px;
 
 }
+.nav-label:hover{
+  color: orange!important;
+  cursor: pointer;
+}
 .menu-item:hover{
   color: orange!important;
   cursor: pointer;
@@ -86,6 +90,9 @@
 .menu-item:hover  .dropdown-content{
   display: block;
   color: black;
+}
+.menu-item:hover .a{
+  color: orange!important;
 }
 .drop-col{
   left: 0;

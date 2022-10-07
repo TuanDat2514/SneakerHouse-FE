@@ -13,6 +13,7 @@ import { TaskbarComponent } from './component/taskbar/taskbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     ListProductComponent,
     TaskbarComponent,
     FooterComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

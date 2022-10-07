@@ -1,12 +1,12 @@
 <app-taskbar></app-taskbar>
 <div class="navigation">
-  <div class="logo">
+  <div class="logo" [routerLink]="['home']">
     <img
       src="https://st3.depositphotos.com/7774456/13208/v/450/depositphotos_132088630-stock-illustration-logo-of-stylish-sneaker-for.jpg">
   </div>
   <div class="navigation body">
     <a class="menu-item">
-      <a [routerLink]="['product']" >Sản phẩm</a>
+      <a class="nav-label" [routerLink]="['product']" >Sản phẩm</a>
       <div class="dropdown-content">
         <ul class="drop-col">
           <!--<ul class="cate">Nhãn hiệu</ul>

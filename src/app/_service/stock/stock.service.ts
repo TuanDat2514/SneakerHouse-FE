@@ -9,7 +9,7 @@ import {environment,URL} from "../../../environments/environment";
 export class StockService {
 
   constructor(private http:HttpClient) { }
-  getStockbyProduct(idProduct:string):Observable<any>{
-    return this.http.get(URL.URL+environment.GETSTOCKPRODUCT+idProduct);
+  getStockbyProduct(idProduct:string,gender:any):Observable<any>{
+    return this.http.get(URL.URL+environment.GETSTOCKPRODUCT+idProduct+"?gender="+gender);
   }
 }
