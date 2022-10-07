@@ -1,12 +1,9 @@
 export const URL={
-  URL: "http://localhost:8080/"
+  URL: "http://10.0.11.103:8080/"
 }
-
-
 
 export const environment = {
   production: false,
-
   //product
   PRODUCT_ALL:"product/all",
 
@@ -15,7 +12,14 @@ export const environment = {
   GET_SIZE_BRAND_BY_GENDER:"size/getSizebyGender/",
 
   //stock
-  GETSTOCKPRODUCT:"stock/stockProduct/"
+  GETSTOCKPRODUCT:"stock/stockProduct/",
+
+  //cart
+  POST_CART:"cart/add",
+  GET_CART:"cart/getCart/",
+
+  //detail cart
+  POST_DETAIL_CART:"/detailcart/add/"
 };
 
 

@@ -58,7 +58,7 @@
   text-align: center;
   width: 100%;
   overflow-x: scroll;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
 }
 .item{
   width: 200px;

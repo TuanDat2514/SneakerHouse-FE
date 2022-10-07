@@ -10,6 +10,24 @@ export interface Product{
   sub_img:string,
   gender:number
 }
+export interface Cart{
+  id_user:number,
+  subtotal:number,
+  discount:number,
+  total:number
+}
+export interface User{
+  id_user:any,
+  fullname:string,
+  address:string,
+  birthday:any,
+  phone:string,
+  gender:number,
+  email:string,
+  username:string,
+  password:string,
+  role:string
+}
 export interface Brand{
   id_brand:string,
   brand:string,

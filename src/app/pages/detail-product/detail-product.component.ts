@@ -3,6 +3,7 @@ import {Product} from "../../../assets/interface/interface";
 import {ProductService} from "../../_service/product/product.service";
 import {BrandService} from "../../_service/brand/brand.service";
 import {StockService} from "../../_service/stock/stock.service";
+import {CartService} from "../../_service/cart/cart.service";
 export interface Stock{
   product:string,
   size:number,
@@ -18,11 +19,14 @@ export class DetailProductComponent implements OnInit {
   selectedProduct!:any;
   brand!:any;
   productStock!:any;
+  selectedSize!:number;
   gender=localStorage.getItem('gender');
+  cart=JSON.parse(String(localStorage.getItem('cart')));
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
-    private stockService:StockService
+    private stockService:StockService,
+    private cartService:CartService
   ) { }
 
   ngOnInit(): void {
@@ -61,6 +65,24 @@ export class DetailProductComponent implements OnInit {
       // console.log(res)
     })
 
+  }
+  selectSize(size:any){
+    this.selectedSize=size;
+  }
+  addtoCart(){
+    let addProcudut={
+      id_product:this.selectedProduct.id_product,
+      size:this.selectedSize,
+      quantity:1,
+      price_prod:this.selectedProduct.price,
+      total_prod:this.selectedProduct.price,
+    }
+    // @ts-ignore
+    this.cartService.addDetail(this.cart.id_cart,addProcudut).subscribe(res=>{
+      this.cartService.getCart(this.cart.id_cart).subscribe(res=>{
+        localStorage.setItem('cart',JSON.stringify(res));
+      })
+    })
   }
 
 }

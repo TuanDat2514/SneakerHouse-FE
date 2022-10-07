@@ -18,11 +18,11 @@
     <div class="select-sỉze">
       <p>Chọn size</p>
       <div class="list-size">
-        <button class="size" *ngFor="let size of productStock">{{size?.size}}</button>
+        <button class="size" *ngFor="let size of productStock" (click)="selectSize(size.size)" [class.selected-size]="selectedSize===size.size">{{size?.size}}</button>
       </div>
     </div>
     <div class="add-favorite">
-      <button class="btn-add">Thêm vào giỏ hàng</button>
+      <button class="btn-add" (click)="addtoCart()">Thêm vào giỏ hàng</button>
       <button class="btn-favorite">
         <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg">
       </button>

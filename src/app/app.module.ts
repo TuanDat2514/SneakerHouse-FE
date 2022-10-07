@@ -14,6 +14,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,13 +29,14 @@ import { HomeComponent } from './pages/home/home.component';
     DetailProductComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SwiperModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        SwiperModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [
   ],
   bootstrap: [AppComponent]
