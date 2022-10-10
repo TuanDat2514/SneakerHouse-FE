@@ -4,6 +4,8 @@ import {ProductService} from "../../_service/product/product.service";
 import {BrandService} from "../../_service/brand/brand.service";
 import {StockService} from "../../_service/stock/stock.service";
 import {CartService} from "../../_service/cart/cart.service";
+import {ActivatedRoute, Route} from "@angular/router";
+import {UserService} from "../../_service/user/user.service";
 export interface Stock{
   product:string,
   size:number,
@@ -18,24 +20,44 @@ export interface Stock{
 export class DetailProductComponent implements OnInit {
   selectedProduct!:any;
   brand!:any;
+  idProd!:string;
   productStock!:any;
   selectedSize!:number;
   gender=localStorage.getItem('gender');
   cart=JSON.parse(String(localStorage.getItem('cart')));
+  isFavorite:boolean=true;
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
     private stockService:StockService,
-    private cartService:CartService
+    private cartService:CartService,
+    private route:ActivatedRoute,
+    private userService:UserService
   ) { }
 
   ngOnInit(): void {
-    this.productSevice.product$.subscribe(res=>this.selectedProduct=res);
-    console.log(this.selectedProduct);
-    this.brandService.getBrandbyId(this.selectedProduct.id_brand).subscribe(res=>{
-      this.brand=res;
-      console.log(this.brand);
-    })
+    this.idProd=String(this.route.snapshot.paramMap.get('id'));
+    this.productSevice.getProdbyId(this.idProd).subscribe(res=>{
+      this.selectedProduct=res
+      this.brandService.getBrandbyId(this.selectedProduct.id_brand).subscribe(res=>{
+        this.brand=res;
+        console.log(this.brand);
+      })
+      this.brandService.getSizeBrand(this.selectedProduct.id_brand,Number(this.gender)).subscribe(res=>{
+        this.productStock=res;
+        //   for(let i=0;i<this.productStock.length ;i++){
+        //     let a={id_brand:'',size:0, gender:0,isEmpty:false}
+        //       a.id_brand=this.productStock[i];
+        //       a.size=this.productStock[i];
+        //       a.gender=this.productStock[i];
+        //       if(res[i][3]==0){
+        //         a.isEmpty=true;
+        //     }
+        //     this.productStock.push(a);
+        //   }
+        // console.log(res)
+      })
+    });
     // this.stockService.getStockbyProduct(this.selectedProduct.id_product, this.gender).subscribe(res=>{
     //   //this.productStock=res;
     //   for(let i=0;i<res.length;i++){
@@ -50,24 +72,18 @@ export class DetailProductComponent implements OnInit {
     //     this.productStock.push(a);
     //   }
     // })
-    this.brandService.getSizeBrand(this.selectedProduct.id_brand,Number(this.gender)).subscribe(res=>{
-      this.productStock=res;
-      //   for(let i=0;i<this.productStock.length ;i++){
-      //     let a={id_brand:'',size:0, gender:0,isEmpty:false}
-      //       a.id_brand=this.productStock[i];
-      //       a.size=this.productStock[i];
-      //       a.gender=this.productStock[i];
-      //       if(res[i][3]==0){
-      //         a.isEmpty=true;
-      //     }
-      //     this.productStock.push(a);
-      //   }
-      // console.log(res)
-    })
 
   }
   selectSize(size:any){
     this.selectedSize=size;
+  }
+  addtoFavorite(){
+    let favorite={id_user:JSON.parse(String(localStorage.getItem('user'))).id_user,id_product: this.idProd}
+    this.userService.addFavorite(favorite).subscribe(res=>{
+      // @ts-ignore
+      console.log(res.status);
+    })
+    this.isFavorite=!this.isFavorite;
   }
   addtoCart(){
     let addProcudut={

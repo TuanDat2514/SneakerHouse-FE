@@ -34,7 +34,7 @@ export class ListProductComponent implements OnInit {
 
   gotoDetail(item:any) {
     this.productService.product$.next(item);
-    this.routes.navigate(['/detail-product']);
+    this.routes.navigate(['/detail-product',item.id_product]);
   }
   changeCategory(cate:string){
     this.category=cate;

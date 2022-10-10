@@ -14,4 +14,7 @@ export class ProductService {
   getListProduct():Observable<Array<Product>>{
     return this.http.get<Array<Product>>(URL.URL+environment.PRODUCT_ALL);
   }
+  getProdbyId(id_prod:any):Observable<any>{
+    return this.http.get(URL.URL+environment.GET_PRODUCT_BY_ID+id_prod);
+  }
 }
