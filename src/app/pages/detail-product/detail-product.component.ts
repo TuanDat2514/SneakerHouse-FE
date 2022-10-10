@@ -26,6 +26,7 @@ export class DetailProductComponent implements OnInit {
   gender=localStorage.getItem('gender');
   cart=JSON.parse(String(localStorage.getItem('cart')));
   isFavorite:boolean=true;
+  message!:string;
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
@@ -85,20 +86,32 @@ export class DetailProductComponent implements OnInit {
     })
     this.isFavorite=!this.isFavorite;
   }
-  addtoCart(){
-    let addProcudut={
-      id_product:this.selectedProduct.id_product,
-      size:this.selectedSize,
-      quantity:1,
-      price_prod:this.selectedProduct.price,
-      total_prod:this.selectedProduct.price,
+  addtoCart() {
+    let addProcudut = {
+      id_product: this.selectedProduct.id_product,
+      img:this.selectedProduct.img,
+      size: this.selectedSize,
+      quantity: 1,
+      price_prod: this.selectedProduct.price,
+      total_prod: this.selectedProduct.price,
     }
-    // @ts-ignore
-    this.cartService.addDetail(this.cart.id_cart,addProcudut).subscribe(res=>{
-      this.cartService.getCart(this.cart.id_cart).subscribe(res=>{
-        localStorage.setItem('cart',JSON.stringify(res));
+    console.log(addProcudut)
+    if (addProcudut.size ==undefined) {
+      this.message = 'Bạn chưa chọn size';
+    } else {
+      this.message='';
+      // @ts-ignore
+      this.cartService.addDetail(this.cart.id_cart, addProcudut).subscribe(res => {
+        if(res.status==200){
+          this.cartService.getCart(this.cart.id_cart).subscribe(res => {
+            localStorage.setItem('cart', JSON.stringify(res));
+          })
+          this.cartService.lenghtCart$.next(this.cartService.lenghtCart$.value + 1);
+        } else {
+          this.message='Thêm không thành công';
+        }
       })
-    })
+    }
   }
 
 }

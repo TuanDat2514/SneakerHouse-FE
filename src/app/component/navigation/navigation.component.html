@@ -139,8 +139,15 @@
       <img src="assets/img/icons8-favorite-100.png">
     </div>
     <div class="icon">
-      <p class="items">0</p>
+      <p class="items">{{lenghtCart}}</p>
       <img src="assets/img/icons8-shopping-bag-100.png">
     </div>
   </div>
 </div>
+<div class="cart-fixed" (click)="openCart()">
+  <p class="countProd">{{lenghtCart}}</p>
+  <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_gio_hang.svg">
+</div>
+<ng-container *ngIf="openDialogCart">
+  <app-modal-cart (close)="closeCart($event)"></app-modal-cart>
+</ng-container>

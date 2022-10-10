@@ -1,0 +1,44 @@
+<div class="overlay"></div>
+<dialog open>
+  <div class="header-dialog">
+    <h4>Giỏ hàng</h4>
+    <button id="cart-close" class="btn-close" (click)="closeModal()"></button>
+  </div>
+  <div class="body-dialog">
+    <div class="cart-header">
+      <div class="w20">Hình ảnh</div>
+      <div class="w30 text" style="text-align: center">Mô tả</div>
+      <div class="w10" style="text-align: center">Giá</div>
+      <div class="w10">Số lượng</div>
+      <div class="w10" style="text-align: center">Xóa</div>
+      <div class="w20 textRight">Tổng</div>
+    </div>
+    <div class="divider"></div>
+    <ng-container *ngFor="let item of listItemCart">
+      <div class="item-cart">
+        <div class="w20">
+          <img class="w20 img img-item" [src]="item.img">
+        </div>
+        <div class="w30">
+          ádfcxvasdfsdfef
+        </div>
+        <div class="w10">400.000</div>
+        <div class="w10">
+          <div class="w20 desktop">
+            <button class="btn-control" >-</button>
+            <input class="inp-qty" type="text" style="width: 40px;text-align: center" disabled/>
+            <button class="btn-control">+</button>
+          </div>
+        </div>
+        <div class="w10 remove" style="text-align: center">
+          <button class="button-remove">
+            <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Trash_bin.svg">
+          </button>
+        </div>
+        <div class="w20 textRight textBold">400.000</div>
+      </div>
+      <div class="divider"></div>
+    </ng-container>
+
+  </div>
+</dialog>

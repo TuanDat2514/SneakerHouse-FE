@@ -20,6 +20,7 @@
       <div class="list-size">
         <button class="size" *ngFor="let size of productStock" (click)="selectSize(size.size)" [class.selected-size]="selectedSize===size.size">{{size?.size}}</button>
       </div>
+      <p *ngIf="message!=undefined">{{message}}</p>
     </div>
     <div class="add-favorite">
       <button class="btn-add" (click)="addtoCart()">Thêm vào giỏ hàng</button>

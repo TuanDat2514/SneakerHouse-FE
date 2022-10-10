@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProductComponent} from "./pages/product/product.component";
 import {DetailProductComponent} from "./pages/detail-product/detail-product.component";
 import {HomeComponent} from "./pages/home/home.component";
+import {ModalCartComponent} from "./component/modal-cart/modal-cart.component";
 
 const routes: Routes = [
+  {path:"modal-cart",component:ModalCartComponent},
   {path:"home",component:HomeComponent},
   {path:"product",component:ProductComponent},
   {path:"detail-product/:id",component:DetailProductComponent},

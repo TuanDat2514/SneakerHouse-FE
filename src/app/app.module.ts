@@ -15,6 +15,7 @@ import { DetailProductComponent } from './pages/detail-product/detail-product.co
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
 import {FormsModule} from "@angular/forms";
+import { ModalCartComponent } from './component/modal-cart/modal-cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FormsModule} from "@angular/forms";
     TaskbarComponent,
     FooterComponent,
     DetailProductComponent,
-    HomeComponent
+    HomeComponent,
+    ModalCartComponent
   ],
     imports: [
         BrowserModule,

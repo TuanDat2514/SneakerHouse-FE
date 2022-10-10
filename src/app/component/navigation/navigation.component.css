@@ -67,7 +67,7 @@
   font-weight: bold;
 }
 .dropdown-content{
-  display: none;
+
   position: absolute;
   z-index: 1;
   margin-top: 58px;
@@ -77,7 +77,9 @@
   background: #919090;
   padding-left: 15px;
   padding-right: 15px;
-
+  visibility: hidden;
+  transition: 0.1s;
+  transition-delay: 1s;
 }
 .nav-label:hover{
   color: orange!important;
@@ -88,9 +90,9 @@
   cursor: pointer;
 }
 .menu-item:hover  .dropdown-content{
-  display: block;
-  color: black;
+  visibility: visible;
 }
+
 .menu-item:hover .a{
   color: orange!important;
 }
@@ -140,6 +142,23 @@
 .sub-brand-shop{
   font-style: italic;
   color: rgba(0, 0, 0, 0.45);
+}
+.cart-fixed{
+  position: fixed;
+  right: 0px;
+  top: 232px;
+  width: 40px;
+  height: 90px;
+  background-color: #ff5f17;
+  padding: 10px 2px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+.cart-fixed img{
+  vertical-align: middle;
 }
 @media screen and (max-width: 414px) {
   .search{

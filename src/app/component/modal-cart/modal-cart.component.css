@@ -1,0 +1,92 @@
+dialog{
+  position: fixed;
+  width: 70%;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 10;
+  top: 50px;
+  overflow-y: auto;
+}
+.header-dialog h4{
+  text-align: center;
+  font-weight: bold;
+  width: 95%;
+}
+.header-dialog{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-close{
+  float: right;
+}
+.cart-header {
+  clear: both;
+  color: #666666;
+}
+
+.w10 {
+  float: left;
+  width: 10%;
+
+}
+
+.w20 {
+  float: left;
+  width: 20%;
+
+}
+
+.w30 {
+  float: left;
+  width: 30%;
+
+}
+
+.textRight {
+  text-align: right;
+}
+.desktop{
+  display: flex;
+}
+.btn-control {
+  width: 30px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn-control:hover {
+  background-color: rgba(169, 169, 169, 0.88);
+  cursor: pointer;
+}
+
+.inp-qty {
+  width: 40px;
+  border: none;
+  font-size: 18px;
+}
+.img-item{
+  height: 150px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.button-remove {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-remove:hover {
+  background-color: #d2190b;
+}
+

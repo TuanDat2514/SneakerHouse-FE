@@ -14,6 +14,8 @@ export class CartService {
     discount:0,
     total:0
   });
+  lenghtCart$=new BehaviorSubject(0);
+
   constructor(private http:HttpClient) { }
   postCart(cart:Cart){
     return this.http.post(URL.URL+environment.POST_CART,cart);
@@ -22,6 +24,6 @@ export class CartService {
     return this.http.get(URL.URL+environment.GET_CART+id_cart);
   }
   addDetail(id_cart:number,detail:any){
-    return this.http.post(URL.URL+environment.POST_DETAIL_CART+id_cart,detail);
+    return this.http.post(URL.URL+environment.POST_DETAIL_CART+id_cart,detail,{observe:"response"});
   }
 }
