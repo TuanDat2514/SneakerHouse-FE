@@ -1,6 +1,7 @@
 import {AfterContentInit, Component, OnDestroy, OnInit} from '@angular/core';
 import { User } from 'src/assets/interface/interface';
 import {CartService} from "../../_service/cart/cart.service";
+import {UserService} from "../../_service/user/user.service";
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,11 @@ import {CartService} from "../../_service/cart/cart.service";
 })
 export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
   cart=this.cartService.cart.value;
-  user:User={
-    id_user:1,
-    fullname:"Trịnh Tuấn Đạt",
-    address:"Bắc Giang",
-    birthday:"25-1-2000",
-    phone:"0388138789",
-    gender:1,
-    email:"dattuantrinh77@gmail.com",
-    username:"tuandat",
-    password:"tuandat",
-    role:"USER"
-  }
-  constructor(private cartService:CartService) { }
+  user!:any;
+  constructor(
+    private cartService:CartService,
+    private userService:UserService
+  ) { }
 
   ngOnDestroy(): void {
         this.ngAfterContentInit();
@@ -37,8 +30,11 @@ export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
     }
 
   ngOnInit(): void {
-    // @ts-ignore
-    localStorage.setItem('user',JSON.stringify(this.user));
+    this.userService.getUser(1).subscribe(res=>{
+      this.user=res;
+      // @ts-ignore
+      localStorage.setItem('user',JSON.stringify(this.user));
+    });
   }
 
 }
