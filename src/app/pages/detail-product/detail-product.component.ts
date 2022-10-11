@@ -23,10 +23,13 @@ export class DetailProductComponent implements OnInit {
   idProd!:string;
   productStock!:any;
   selectedSize!:number;
+  listSize:any[]=[];
   gender=localStorage.getItem('gender');
   cart=JSON.parse(String(localStorage.getItem('cart')));
   isFavorite:boolean=true;
   message!:string;
+  user=JSON.parse(String(localStorage.getItem('user')));
+  countItem=JSON.parse(String(localStorage.getItem('countItem')));
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
@@ -38,53 +41,56 @@ export class DetailProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.idProd=String(this.route.snapshot.paramMap.get('id'));
+    this.checkFavorite();
     this.productSevice.getProdbyId(this.idProd).subscribe(res=>{
       this.selectedProduct=res
+      console.log(this.selectedProduct);
       this.brandService.getBrandbyId(this.selectedProduct.id_brand).subscribe(res=>{
         this.brand=res;
         console.log(this.brand);
       })
       this.brandService.getSizeBrand(this.selectedProduct.id_brand,Number(this.gender)).subscribe(res=>{
         this.productStock=res;
-        //   for(let i=0;i<this.productStock.length ;i++){
-        //     let a={id_brand:'',size:0, gender:0,isEmpty:false}
-        //       a.id_brand=this.productStock[i];
-        //       a.size=this.productStock[i];
-        //       a.gender=this.productStock[i];
-        //       if(res[i][3]==0){
-        //         a.isEmpty=true;
-        //     }
-        //     this.productStock.push(a);
-        //   }
-        // console.log(res)
+        console.log(this.productStock);
+        for(let i=0;i<this.productStock.length;i++) {
+          for (let j = 0; j < this.selectedProduct.stock.length; j++) {
+            let s = {id_product: this.selectedProduct.id_product, size: 0, amount: 0};
+            if (this.productStock[i].id_size == this.selectedProduct.stock[j].id_size) {
+              s.size = this.productStock[i].size;
+              s.amount = this.selectedProduct.stock[j].amount;
+              console.log(s);
+              this.listSize.push(s);
+            }
+          }
+        }
+        console.log(this.listSize)
       })
     });
-    // this.stockService.getStockbyProduct(this.selectedProduct.id_product, this.gender).subscribe(res=>{
-    //   //this.productStock=res;
-    //   for(let i=0;i<res.length;i++){
-    //     let a={ product:'',size:0, gender:0, amount:0,isEmpty:false}
-    //       a.product=res[i][0];
-    //       a.size=res[i][1];
-    //       a.gender=res[i][2];
-    //       a.amount=res[i][3];
-    //       if(res[i][3]==0){
-    //         a.isEmpty=true;
-    //     }
-    //     this.productStock.push(a);
-    //   }
-    // })
+
 
   }
+  checkFavorite(){
+    // @ts-ignore
+    let i = this.user.favorite.find(obj=>obj.id_product===this.idProd);
+    console.log(i);
+    if(i){
+      this.isFavorite=!this.isFavorite;
+    }
+  }
   selectSize(size:any){
-    this.selectedSize=size;
+      this.selectedSize=size
   }
   addtoFavorite(){
     let favorite={id_user:JSON.parse(String(localStorage.getItem('user'))).id_user,id_product: this.idProd}
-    this.userService.addFavorite(favorite).subscribe(res=>{
+    this.userService.addFavorite(favorite,favorite.id_user).subscribe(res=>{
       // @ts-ignore
-      console.log(res.status);
+      if(res.status==200){
+        this.isFavorite=!this.isFavorite;
+        this.userService.getUser(favorite.id_user).subscribe(res=>{
+          localStorage.setItem('user',res);
+        })
+      }
     })
-    this.isFavorite=!this.isFavorite;
   }
   addtoCart() {
     let addProcudut = {
@@ -107,6 +113,7 @@ export class DetailProductComponent implements OnInit {
             localStorage.setItem('cart', JSON.stringify(res));
           })
           this.cartService.lenghtCart$.next(this.cartService.lenghtCart$.value + 1);
+          localStorage.setItem('countItem',String(Number(this.countItem)+1));
         } else {
           this.message='Thêm không thành công';
         }

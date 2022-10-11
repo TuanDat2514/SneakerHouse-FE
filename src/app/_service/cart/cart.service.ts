@@ -14,7 +14,7 @@ export class CartService {
     discount:0,
     total:0
   });
-  lenghtCart$=new BehaviorSubject(0);
+  lenghtCart$=new BehaviorSubject(Number(JSON.parse(String(localStorage.getItem('countItem')))));
 
   constructor(private http:HttpClient) { }
   postCart(cart:Cart){

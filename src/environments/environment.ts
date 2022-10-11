@@ -1,6 +1,6 @@
 export const URL={
- URL: "http://localhost:8080/",
-  //URL: "http://10.0.11.103:8080/"
+ //URL: "http://localhost:8080/",
+  URL: "http://10.0.11.103:8080/"
 }
 
 export const environment = {
@@ -24,7 +24,7 @@ export const environment = {
   POST_DETAIL_CART:"/detailcart/add/",
 
   //favorite
-  POST_FAVORITE:"favorite/add",
+  POST_FAVORITE:"favorite/add/",
 
   //user
   GET_USER:"user/getUser/"
