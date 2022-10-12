@@ -15,7 +15,7 @@ export class CartService {
     total:0
   });
   lenghtCart$=new BehaviorSubject(Number(JSON.parse(String(localStorage.getItem('countItem')))));
-
+  listItemCart$=new BehaviorSubject<any>(null);
   constructor(private http:HttpClient) { }
   postCart(cart:Cart){
     return this.http.post(URL.URL+environment.POST_CART,cart);
@@ -23,7 +23,10 @@ export class CartService {
   getCart(id_cart:number):Observable<any>{
     return this.http.get(URL.URL+environment.GET_CART+id_cart);
   }
-  addDetail(id_cart:number,detail:any){
-    return this.http.post(URL.URL+environment.POST_DETAIL_CART+id_cart,detail,{observe:"response"});
+  addDetail(detail:any){
+    return this.http.post(URL.URL+environment.POST_DETAIL_CART,detail,{observe:"response"});
+  }
+  deleteDetail(id_detail:any):Observable<any>{
+    return this.http.delete(URL.URL+environment.DELETE_DETAIL_CART+id_detail,{observe:"response"});
   }
 }

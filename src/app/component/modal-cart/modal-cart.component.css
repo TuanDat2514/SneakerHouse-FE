@@ -7,6 +7,10 @@ dialog{
   z-index: 10;
   top: 50px;
   overflow-y: auto;
+
+}
+.body-dialog{
+  padding-bottom: 10px;
 }
 .header-dialog h4{
   text-align: center;

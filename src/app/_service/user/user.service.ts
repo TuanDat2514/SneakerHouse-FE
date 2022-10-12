@@ -13,8 +13,11 @@ export class UserService {
   getUser(id_user:any):Observable<any>{
     return this.http.get(URL.URL+environment.GET_USER+id_user);
   }
-  
+
   addFavorite(prod:any,id_user:any){
     return this.http.post(URL.URL+environment.POST_FAVORITE+id_user,prod,{observe:"response"});
+  }
+  removeFavorite(id_favorite:any){
+    return this.http.delete(URL.URL+environment.DELETE_FAVORITE+id_favorite,{observe:"response"});
   }
 }

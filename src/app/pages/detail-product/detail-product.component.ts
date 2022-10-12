@@ -29,7 +29,7 @@ export class DetailProductComponent implements OnInit {
   isFavorite:boolean=true;
   message!:string;
   user=JSON.parse(String(localStorage.getItem('user')));
-  countItem=JSON.parse(String(localStorage.getItem('countItem')));
+  countItem=JSON.parse(String(sessionStorage.getItem('countItem')));
   constructor(
     private productSevice:ProductService,
     private brandService:BrandService,
@@ -80,26 +80,59 @@ export class DetailProductComponent implements OnInit {
   selectSize(size:any){
       this.selectedSize=size
   }
+
+  clickBtnFavorite(){
+    if(this.isFavorite){
+      this.addtoFavorite();
+    }else {
+      this.removeFavorite();
+    }
+  }
+
+  removeFavorite(){
+    // @ts-ignore
+    let i = this.user.favorite.find(obj=>obj.id_product===this.idProd);
+    console.log(i);
+    this.userService.removeFavorite(i.id).subscribe(res=>{
+      if(res.status==202){
+        this.message='Xóa thành công';
+        this.isFavorite=true;
+        this.userService.getUser(this.user.id_user).subscribe(res=>{
+          localStorage.setItem('user',JSON.stringify(res));
+        })
+      }else {
+
+        this.message="Không thành công";
+      }
+    });
+  }
   addtoFavorite(){
     let favorite={id_user:JSON.parse(String(localStorage.getItem('user'))).id_user,id_product: this.idProd}
-    this.userService.addFavorite(favorite,favorite.id_user).subscribe(res=>{
-      // @ts-ignore
-      if(res.status==200){
-        this.isFavorite=!this.isFavorite;
-        this.userService.getUser(favorite.id_user).subscribe(res=>{
-          localStorage.setItem('user',res);
-        })
-      }
-    })
+    // @ts-ignore
+    let i = this.user.favorite.find(obj=>obj.id_product===favorite.id_product);
+    if(!i){
+      this.userService.addFavorite(favorite,favorite.id_user).subscribe(res=>{
+        // @ts-ignore
+        if(res.status==200){
+          this.isFavorite=false;
+          this.userService.getUser(favorite.id_user).subscribe(res=>{
+            localStorage.setItem('user',JSON.stringify(res));
+          })
+        }
+      })
+    }
   }
   addtoCart() {
     let addProcudut = {
       id_product: this.selectedProduct.id_product,
+      name:this.selectedProduct.name,
+      color:this.selectedProduct.color,
       img:this.selectedProduct.img,
       size: this.selectedSize,
       quantity: 1,
       price_prod: this.selectedProduct.price,
       total_prod: this.selectedProduct.price,
+      cart_id:this.cart.id_cart,
     }
     console.log(addProcudut)
     if (addProcudut.size ==undefined) {
@@ -107,7 +140,7 @@ export class DetailProductComponent implements OnInit {
     } else {
       this.message='';
       // @ts-ignore
-      this.cartService.addDetail(this.cart.id_cart, addProcudut).subscribe(res => {
+      this.cartService.addDetail(addProcudut).subscribe(res => {
         if(res.status==200){
           this.cartService.getCart(this.cart.id_cart).subscribe(res => {
             localStorage.setItem('cart', JSON.stringify(res));

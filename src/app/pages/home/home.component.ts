@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
       // @ts-ignore
       this.cartService.getCart(res.id_cart).subscribe(res=>{
         localStorage.setItem('cart',JSON.stringify(res));
+        localStorage.setItem('cartID',JSON.stringify(res.id_cart));
+        this.cartService.listItemCart$.next(res.detailCart);
       });
     });
     }
@@ -35,7 +37,7 @@ export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
       // @ts-ignore
       localStorage.setItem('user',JSON.stringify(this.user));
     });
-    localStorage.setItem('countItem',"0");
+    sessionStorage.setItem('countItem',"0");
   }
 
 }

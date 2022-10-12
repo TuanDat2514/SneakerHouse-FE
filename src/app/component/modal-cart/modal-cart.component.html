@@ -19,23 +19,24 @@
         <div class="w20">
           <img class="w20 img img-item" [src]="item.img">
         </div>
-        <div class="w30">
-          ádfcxvasdfsdfef
+        <div class="w30" style="padding-left: 10px">
+            {{item.name}} - {{item.color}}
+
         </div>
-        <div class="w10">400.000</div>
+        <div class="w10">{{item.price_prod| currency:'VND':' ':'1.3-3'}}</div>
         <div class="w10">
           <div class="w20 desktop">
             <button class="btn-control" >-</button>
-            <input class="inp-qty" type="text" style="width: 40px;text-align: center" disabled/>
+            <input class="inp-qty" [value]="item.quantity" type="text" style="width: 40px;text-align: center" disabled/>
             <button class="btn-control">+</button>
           </div>
         </div>
         <div class="w10 remove" style="text-align: center">
-          <button class="button-remove">
+          <button class="button-remove" (click)="deleteDetail(item)">
             <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Trash_bin.svg">
           </button>
         </div>
-        <div class="w20 textRight textBold">400.000</div>
+        <div class="w20 textRight textBold">{{item.quantity*item.price_prod| currency:'VND':' ':'1.3-3'}}</div>
       </div>
       <div class="divider"></div>
     </ng-container>
