@@ -51,6 +51,9 @@ h3{
 .text{
   text-align: center;
 }
+.text-uppercase{
+  text-transform: uppercase;
+}
 
 
 

@@ -13,8 +13,14 @@
             <div class="info-name">{{item.name}} - {{item.color|uppercase}}</div>
             <div class="info-price">Giá: {{item.price_prod*1000| currency:'VND':' ':'1.'}} VND</div>
             <div class="row-bottom">
-              <div class="select info-size">Size</div>
-              <div class="select info-amount">Số lượng</div>
+              <div class="select info-size">Size<br>
+                {{item.size}}
+              </div>
+
+              <div class="select info-amount">Số lượng<br>
+                {{item.quantity}}
+              </div>
+
             </div>
           </div>
           <div class="right-item">
@@ -25,7 +31,7 @@
               <button class="btn favorite">
                 <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg">
               </button>
-              <button class="btn delete">
+              <button class="btn delete" (click)="deleteDetail(item)">
                 <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Trash_bin.svg">
               </button>
             </div>
@@ -41,7 +47,9 @@
   </div>
   <div class="right">
     <div class="checkout">
-      checkout
+      <div class="text-uppercase title-checkout">đơn hàng</div>
+      <div class="divider" style="background-color: #111111;height: 2px"></div>
+      <div class="text-uppercase ">nhập mã giảm giá</div>
     </div>
   </div>
 </div>
