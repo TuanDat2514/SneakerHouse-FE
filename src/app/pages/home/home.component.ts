@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
       // @ts-ignore
       localStorage.setItem('user',JSON.stringify(this.user));
     });
-    sessionStorage.setItem('countItem',"0");
+    localStorage.setItem('countItem',"0");
   }
 
 }

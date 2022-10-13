@@ -1,0 +1,47 @@
+<div class="col">
+  <div class="left">
+    <div class="cart">
+      <div class="title">
+        giỏ hàng
+      </div>
+      <ng-container *ngFor="let item of listItem">
+        <div class="item">
+          <div class="item-img">
+            <img class="img" [src]="item.img">
+          </div>
+          <div class="info-item">
+            <div class="info-name">{{item.name}} - {{item.color|uppercase}}</div>
+            <div class="info-price">Giá: {{item.price_prod*1000| currency:'VND':' ':'1.'}} VND</div>
+            <div class="row-bottom">
+              <div class="select info-size">Size</div>
+              <div class="select info-amount">Số lượng</div>
+            </div>
+          </div>
+          <div class="right-item">
+            <div class="total-prod">
+              {{item.total_prod*1000| currency:'VND':' ':'1.'}} VND
+            </div>
+            <div class="button">
+              <button class="btn favorite">
+                <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg">
+              </button>
+              <button class="btn delete">
+                <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Trash_bin.svg">
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="divider"></div>
+    <div class="bottom">
+      <button class="btn but-botttom">xóa hết</button>
+      <button class="btn but-botttom">quay lại</button>
+    </div>
+  </div>
+  <div class="right">
+    <div class="checkout">
+      checkout
+    </div>
+  </div>
+</div>

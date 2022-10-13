@@ -23,7 +23,8 @@ export const environment = {
   //detail cart
   POST_DETAIL_CART:"detailcart/add",
   DELETE_DETAIL_CART:"detailcart/delete/",
-
+  GET_DETAIL_CART:"detailcart/getDetail/",
+  UPDATE_DETAIL_CART:"detailcart/update/",
 
   //favorite
   POST_FAVORITE:"favorite/add/",

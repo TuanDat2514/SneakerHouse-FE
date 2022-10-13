@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
 import {FormsModule} from "@angular/forms";
 import { ModalCartComponent } from './component/modal-cart/modal-cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ModalCartComponent } from './component/modal-cart/modal-cart.component'
     FooterComponent,
     DetailProductComponent,
     HomeComponent,
-    ModalCartComponent
+    ModalCartComponent,
+    CheckoutComponent
   ],
     imports: [
         BrowserModule,

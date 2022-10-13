@@ -20,15 +20,15 @@
           <img class="w20 img img-item" [src]="item.img">
         </div>
         <div class="w30" style="padding-left: 10px">
-            {{item.name}} - {{item.color}}
-
+            {{item.name}} - {{item.color}} <br>
+            Size: {{item.size}}
         </div>
         <div class="w10">{{item.price_prod| currency:'VND':' ':'1.3-3'}}</div>
         <div class="w10">
           <div class="w20 desktop">
-            <button class="btn-control" >-</button>
+            <button class="btn-control" (click)="controlQty(item,-1)" [disabled]="item.quantity===1">-</button>
             <input class="inp-qty" [value]="item.quantity" type="text" style="width: 40px;text-align: center" disabled/>
-            <button class="btn-control">+</button>
+            <button class="btn-control" (click)="controlQty(item,1)">+</button>
           </div>
         </div>
         <div class="w10 remove" style="text-align: center">
@@ -36,10 +36,19 @@
             <img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Trash_bin.svg">
           </button>
         </div>
-        <div class="w20 textRight textBold">{{item.quantity*item.price_prod| currency:'VND':' ':'1.3-3'}}</div>
+        <div class="w20 textRight textBold">{{item.quantity*item.price_prod*1000| currency:'VND':' ':'1.'}}</div>
       </div>
       <div class="divider"></div>
     </ng-container>
-
+    <div class="cart-total">
+      <!--      <select>-->
+      <!--        <option *ngFor="let u of user.discount" [value]="u.condition">{{u.name}}</option>-->
+      <!--      </select>-->
+      <div class="big-text">Tổng</div>
+      <div class="big-text" id="cart-total-price" style="width: 100%">{{total*1000| currency:'VND':' ':'1.'}} VND</div>
+    </div>
+    <div class="cart-checkout">
+      <button class="button-checkout">Thanh toán</button>
+    </div>
   </div>
 </dialog>

@@ -93,4 +93,32 @@ dialog{
 .button-remove:hover {
   background-color: #d2190b;
 }
+.big-text {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #111111;
+}
+.cart-total {
+  clear: both;
+  text-align: right;
+}
+.cart-checkout {
+  clear: both;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.button-checkout {
+  border-color: #000000;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: orange;
+  font-weight: bold;
+}
+
 

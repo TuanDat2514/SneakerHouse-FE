@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, catchError, Observable} from "rxjs";
 import {Cart} from "../../../assets/interface/interface";
 import {HttpClient} from "@angular/common/http";
 import {environment,URL} from "../../../environments/environment";
@@ -16,6 +16,7 @@ export class CartService {
   });
   lenghtCart$=new BehaviorSubject(Number(JSON.parse(String(localStorage.getItem('countItem')))));
   listItemCart$=new BehaviorSubject<any>(null);
+  total$=new BehaviorSubject<any>(0);
   constructor(private http:HttpClient) { }
   postCart(cart:Cart){
     return this.http.post(URL.URL+environment.POST_CART,cart);
@@ -28,5 +29,12 @@ export class CartService {
   }
   deleteDetail(id_detail:any):Observable<any>{
     return this.http.delete(URL.URL+environment.DELETE_DETAIL_CART+id_detail,{observe:"response"});
+  }
+  getDetailCart(id_cart:any):Observable<any>{
+    return this.http.get(URL.URL+environment.GET_DETAIL_CART+id_cart,{observe:"response"});
+  }
+  updateDetail(id_detail:any,detail:any){
+    return this.http.put(URL.URL+environment.UPDATE_DETAIL_CART+id_detail,detail,{observe:"response"})
+
   }
 }

@@ -4,8 +4,10 @@ import {ProductComponent} from "./pages/product/product.component";
 import {DetailProductComponent} from "./pages/detail-product/detail-product.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {ModalCartComponent} from "./component/modal-cart/modal-cart.component";
+import {CheckoutComponent} from "./pages/checkout/checkout.component";
 
 const routes: Routes = [
+  {path:"checkout",component:CheckoutComponent},
   {path:"modal-cart",component:ModalCartComponent},
   {path:"home",component:HomeComponent},
   {path:"product",component:ProductComponent},
