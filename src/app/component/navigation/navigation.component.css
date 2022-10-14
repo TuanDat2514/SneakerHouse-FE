@@ -4,6 +4,7 @@
   box-sizing: border-box;
   justify-content: center;
   width: 100%;
+  max-width: 1366px;
 }
 .logo{
   height: auto;
@@ -67,7 +68,7 @@
   font-weight: bold;
 }
 .dropdown-content{
-
+  max-width: 1366px;
   position: absolute;
   z-index: 1;
   margin-top: 58px;

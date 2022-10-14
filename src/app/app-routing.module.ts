@@ -5,8 +5,10 @@ import {DetailProductComponent} from "./pages/detail-product/detail-product.comp
 import {HomeComponent} from "./pages/home/home.component";
 import {ModalCartComponent} from "./component/modal-cart/modal-cart.component";
 import {CheckoutComponent} from "./pages/checkout/checkout.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 const routes: Routes = [
+  {path:"login",component:LoginComponent},
   {path:"checkout",component:CheckoutComponent},
   {path:"modal-cart",component:ModalCartComponent},
   {path:"home",component:HomeComponent},

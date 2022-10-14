@@ -51,9 +51,28 @@ h3{
 .text{
   text-align: center;
 }
+.text2{
+  font-size: 24px;
+}
+.text1{
+  font-size: 20px;
+}
+.btn-orange{
+  width: 100%;
+  background: orange;
+  font-size: 24px;
+  font-weight: bold;
+  height: 60px;
+  border-radius: 5px;
+}
+.title1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .text-uppercase{
   text-transform: uppercase;
 }
+
 
 
 

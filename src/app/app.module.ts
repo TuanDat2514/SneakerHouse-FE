@@ -17,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
 import {FormsModule} from "@angular/forms";
 import { ModalCartComponent } from './component/modal-cart/modal-cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     DetailProductComponent,
     HomeComponent,
     ModalCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,

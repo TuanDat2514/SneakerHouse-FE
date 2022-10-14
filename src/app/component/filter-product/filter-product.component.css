@@ -1,1 +1,50 @@
+.header-filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  position: relative;
+  top:0;
+}
+.clear{
+  text-decoration-line: underline;
+}
+.clear:hover{
+  cursor: pointer;
+}
+.filters {
+  display: flex;
+  gap: 5%;
+  height: 40px;
 
+}
+.applied-filters{
+  padding-left: 10px;
+}
+.chips-filters {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 9999px;
+  padding: 6px 10px 5px 10px;
+}
+
+.closebtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
