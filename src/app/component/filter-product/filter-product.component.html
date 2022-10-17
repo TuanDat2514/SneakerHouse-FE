@@ -4,15 +4,31 @@
   <a class="clear text1">Xóa hết</a>
 </div>
 <div class="divider"></div>
-<div class="applied-filters">
-  <div class="title1">Đã áp dụng</div>
-  <div class="filters">
-    <button  class="chips-filters">Adidas
-      <span class="closebtn close">&times;</span>
-    </button>
-    <button  class="chips-filters">Nike
-      <span class="closebtn close">&times;</span>
-    </button>
+<div class="filter">
+  <div class="applied-filters">
+    <div class="title1 text1">Đã áp dụng</div>
+    <div class="filters">
+      <button class="chips-filters">Adidas
+        <span class="closebtn close">&times;</span>
+      </button>
+      <button class="chips-filters">Nike
+        <span class="closebtn close">&times;</span>
+      </button>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class=" option-filters" *ngFor="let item of optionList;let i=index">
+    <div class="option-title box-title">
+      <div class="title1 text1">{{item.name}}</div>
+      <span class="arrow" (click)="showOption(item,i)" *ngIf="!item.show">&#709;</span>
+      <span class="arrow" (click)="showOption(item,i)" *ngIf="item.show">&#708;</span>
+    </div>
+    <div class="option" *ngIf="item.show">
+          <div class="options" *ngFor="let option of item.option">
+            <input #inp id="filter" class="check-filter" type="checkbox" [value]="option.name" (change)="abc(inp.value)">
+            <label for="filter" class="label-input">{{option.name}}</label>
+          </div>
+    </div>
+    <div class="divider"></div>
   </div>
 </div>
-
