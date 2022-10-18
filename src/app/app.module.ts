@@ -18,6 +18,10 @@ import {FormsModule} from "@angular/forms";
 import { ModalCartComponent } from './component/modal-cart/modal-cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     ModalCartComponent,
     CheckoutComponent,
-    LoginComponent
+    LoginComponent,
+    FavoriteComponent,
+    RegisterComponent,
+    DashboardComponent,
+    LoginAdminComponent,
   ],
     imports: [
         BrowserModule,

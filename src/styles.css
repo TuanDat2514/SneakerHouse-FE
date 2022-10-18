@@ -72,7 +72,61 @@ h3{
 .text-uppercase{
   text-transform: uppercase;
 }
+.hover:hover{
+  cursor: pointer;
+}
+.info-name{
+  font-size: 24px;
+}
+.item-img{
+  width: 20%;
+}
+.img{
+  height: 150px;
+}
+.info-item{
+  width: 50%;
+  display: table-cell;
+  vertical-align: top;
+}
+.right-item{
+  flex: 1;
+  text-align: end;
+}
+.select{
+  display: inline-block;
+}
+.info-size{
+  width: 50%;
+}
+.info-amount{
+  width: 50%;
+}
+.row-bottom{
+  bottom: 0px;
+}
+.button{
+  width: 100%;
+  margin-top: 30px;
+  display: grid;
+  justify-content: end;
+  gap: 10px;
+}
 
+.delete{
+  background-color: black;
+}
+.delete:hover{
+  background-color: black!important;
+}
+.total-prod{
+  margin-top: 10px;
+  color: #ff5f17;
+  font-size: 20px;
+}
+.btn{
+  width: 100px;
+}
 
 
 

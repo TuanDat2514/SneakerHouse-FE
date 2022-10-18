@@ -6,8 +6,15 @@ import {HomeComponent} from "./pages/home/home.component";
 import {ModalCartComponent} from "./component/modal-cart/modal-cart.component";
 import {CheckoutComponent} from "./pages/checkout/checkout.component";
 import {LoginComponent} from "./pages/login/login.component";
+import {FavoriteComponent} from "./pages/favorite/favorite.component";
+import {RegisterComponent} from "./pages/register/register.component";
+import {LoginAdminComponent} from "./admin/login-admin/login-admin.component";
+
 
 const routes: Routes = [
+  {path:"admin",component:LoginAdminComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"favorite",component:FavoriteComponent},
   {path:"login",component:LoginComponent},
   {path:"checkout",component:CheckoutComponent},
   {path:"modal-cart",component:ModalCartComponent},
