@@ -1,6 +1,6 @@
 export const URL={
- URL: "http://localhost:8080/",
-  //URL: "http://10.0.11.103:8080/"
+ //URL: "http://localhost:8080/",
+  URL: "http://10.0.11.103:8080/"
 }
 
 export const environment = {
@@ -29,8 +29,12 @@ export const environment = {
   //favorite
   POST_FAVORITE:"favorite/add/",
   DELETE_FAVORITE:"favorite/delete/",
+
   //user
-  GET_USER:"user/getUser/"
+  GET_USER:"user/getUser/",
+
+  //discount
+  GET_DISCOUNT:"discount/getDiscount"
 };
 
 

@@ -9,9 +9,11 @@ import {LoginComponent} from "./pages/login/login.component";
 import {FavoriteComponent} from "./pages/favorite/favorite.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {LoginAdminComponent} from "./admin/login-admin/login-admin.component";
+import {ShippingComponent} from "./pages/shipping/shipping.component";
 
 
 const routes: Routes = [
+  {path:"shipping",component:ShippingComponent},
   {path:"admin",component:LoginAdminComponent},
   {path:"register",component:RegisterComponent},
   {path:"favorite",component:FavoriteComponent},

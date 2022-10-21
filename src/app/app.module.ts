@@ -22,6 +22,7 @@ import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
     RegisterComponent,
     DashboardComponent,
     LoginAdminComponent,
+    ShippingComponent,
   ],
     imports: [
         BrowserModule,

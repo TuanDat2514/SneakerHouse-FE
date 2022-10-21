@@ -50,8 +50,8 @@
       <div class="divider" style="background-color: #111111;height: 2px"></div>
       <div class="text-uppercase">nhập mã giảm giá</div>
       <div class="input-discountCode">
-        <input #inp1 class="input-code" style="text-transform: uppercase" (change)="abc(inp1.value)">
-        <button class="text-uppercase discountCode">áp dụng</button>
+        <input #inp1 class="input-code" style="text-transform: uppercase">
+        <button class="text-uppercase discountCode" (click)="submitDiscount(inp1.value)">áp dụng</button>
       </div>
       <div class="dis-check">
         <div class="row1">
@@ -60,14 +60,14 @@
         </div>
         <div class="row1">
           <div class="text-row">Giảm giá</div>
-          <div class="discount">0</div>
+          <div class="discount">{{discount? discount.discount+'%':'0'}}</div>
         </div>
       </div>
       <div class="row1 dis-check sub-total">
         <div class="text-uppercase text2">tạm tính</div>
         <div class="sub text2">{{checkout*1000| currency:'VND':' ':'1.'}} VND</div>
       </div>
-      <div class="btn-goShipping">
+      <div class="btn-goShipping" (click)="submitCheckout()">
         <button class="btn-orange text-uppercase">tiếp tục</button>
       </div>
     </div>

@@ -11,6 +11,8 @@ export class CheckoutComponent implements OnInit {
   cartID=Number(JSON.parse(String(localStorage.getItem('cartID'))));
   total:any;
   checkout:any;
+  discount:any;
+  cart=JSON.parse(String(localStorage.getItem('cart')));
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -34,7 +36,22 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
-  abc(i:any){
-    console.log(i);
+  submitDiscount(i:any){
+    this.cartService.getDiscount(i).subscribe(res=>{
+      this.discount=res;
+      this.checkout=this.checkout-(this.checkout*this.discount.discount/100);
+    })
+  }
+  submitCheckout(){
+    if(this.discount) {
+      this.cart.discount = this.discount.discount;
+      this.cart.subtotal = this.total;
+      this.cart.total = this.checkout;
+    }else {
+      this.cart.subtotal = this.total;
+      this.cart.total = this.checkout;
+    }
+    console.log(this.cart);
+    localStorage.setItem('cart',JSON.stringify(this.cart));
   }
 }

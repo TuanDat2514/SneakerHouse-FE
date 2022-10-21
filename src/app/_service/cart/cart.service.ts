@@ -35,6 +35,8 @@ export class CartService {
   }
   updateDetail(id_detail:any,detail:any){
     return this.http.put(URL.URL+environment.UPDATE_DETAIL_CART+id_detail,detail,{observe:"response"})
-
+  }
+  getDiscount(code:string):Observable<any>{
+    return this.http.get(URL.URL+environment.GET_DISCOUNT+"?code="+code);
   }
 }

@@ -70,6 +70,29 @@
   width: 50%;
   height: 50px;
 }
+.total-prod{
+  margin-top: 10px;
+  color: #ff5f17;
+  font-size: 20px;
+}
+.favorite{
+  width: 100px;
+  border: 1.5px solid #ff5f17;
+}
+.favorite img{
+  width: 35%;
+}
+.favorite:hover{
+  border: 1.5px solid #ff5f17;
+}
+.delete{
+  background-color: black;
+  width: 100px;
+  height: 45px;
+}
+.delete:hover{
+  background-color: black;
+}
 .bottom{
   display: flex;
   justify-content: space-evenly;

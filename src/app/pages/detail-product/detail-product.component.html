@@ -1,7 +1,7 @@
 <div class="detail-product">
   <div class="detail-img">
     <div class="img">
-      <img [src]="selectedProduct.img">
+      <img [src]="selectedProduct?.img">
     </div>
     <div class="sub-img">
       <img src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
@@ -11,7 +11,7 @@
   </div>
   <div class="detail-info">
     <div class="info">
-      <p>{{selectedProduct.name}} - {{selectedProduct.color|uppercase}}</p>
+      <p>{{selectedProduct?.name}} - {{selectedProduct?.color|uppercase}}</p>
       <h6>{{selectedProduct.description}}</h6>
       <h5 class="price">{{selectedProduct.price| currency:'VND':' ':'1.3-3'}} VND</h5>
     </div>

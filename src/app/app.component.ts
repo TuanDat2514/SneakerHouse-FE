@@ -8,7 +8,7 @@ import {ActivatedRoute, Router, NavigationEnd, Routes} from "@angular/router";
 })
 export class AppComponent{
   title = 'sneaker-house';
-  isAdmin:boolean=false;
+  isAdmin:boolean=true;
 
   constructor(private router: Router) {
     /*if(location.href === "http://localhost:2514/admin"){
