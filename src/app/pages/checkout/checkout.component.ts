@@ -9,6 +9,8 @@ import {CartService} from "../../_service/cart/cart.service";
 export class CheckoutComponent implements OnInit {
   listItem:any;
   cartID=Number(JSON.parse(String(localStorage.getItem('cartID'))));
+  total:any;
+  checkout:any;
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {
@@ -17,11 +19,12 @@ export class CheckoutComponent implements OnInit {
   displayItemsCart(){
     this.cartService.getDetailCart(this.cartID).subscribe(res=>{
       this.listItem=res.body;
-     /* let sum=0;
-      for (let i=0;i<this.listItemCart.length;i++){
-        sum+=this.listItemCart[i].total_prod;
+      let sum=0;
+      for (let i=0;i<this.listItem.length;i++){
+        sum+=this.listItem[i].total_prod;
       }
-      this.cartService.total$.next(sum);*/
+      this.total=sum;
+      this.checkout=this.total;
     })
   }
   deleteDetail(item:any){
@@ -30,5 +33,8 @@ export class CheckoutComponent implements OnInit {
         this.displayItemsCart();
       }
     })
+  }
+  abc(i:any){
+    console.log(i);
   }
 }

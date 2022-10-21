@@ -97,7 +97,7 @@
 .discountCode{
   height: 30px;
   border: none;
-  background: #ff5f17;
+  background: orange;
 }
 .input-discountCode{
   display: flex;

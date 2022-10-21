@@ -72,6 +72,9 @@ h3{
 .text-uppercase{
   text-transform: uppercase;
 }
+.hover:hover{
+  cursor: pointer;
+}
 
 
 

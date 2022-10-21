@@ -20,7 +20,7 @@
           <img class="w20 img img-item" [src]="item.img">
         </div>
         <div class="w30" style="padding-left: 10px">
-            {{item.name}} - {{item.color}} <br>
+            {{item.name}} - {{item.color|uppercase}} <br>
             Size: {{item.size}}
         </div>
         <div class="w10">{{item.price_prod| currency:'VND':' ':'1.3-3'}}</div>
