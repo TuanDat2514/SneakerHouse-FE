@@ -6,7 +6,7 @@
   </div>
   <div class="navigation body">
     <a class="menu-item">
-      <a class="nav-label" [routerLink]="['product']" >Sản phẩm</a>
+      <a class="nav-label" [routerLink]="['product']">Sản phẩm</a>
       <div class="dropdown-content">
         <ul class="drop-col">
           <!--<ul class="cate">Nhãn hiệu</ul>
@@ -64,16 +64,16 @@
           <li class="li-col"><a>Air Max</a></li>
           <li class="li-col"><a>Old School</a></li>
           <li class="li-col"><a>Yeezy Boost 350</a></li>
-         <!-- <img class="drop-img" src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
-          <h5>ADIDAS</h5>-->
+          <!-- <img class="drop-img" src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
+           <h5>ADIDAS</h5>-->
         </ul>
         <ul class="drop-col">
           <ul class="cate">Hỗ trợ</ul>
           <li class="li-col"><a>Liên hệ hỗ trợ</a></li>
           <li class="li-col"><a>Hotline</a></li>
           <li class="li-col"><a>0793979988</a></li>
-        <!--  <img class="drop-img" src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
-          <h5>XU HƯỚNG</h5>-->
+          <!--  <img class="drop-img" src="assets/img/305916328_1159008398294505_6378008893588196344_n.jpg">
+            <h5>XU HƯỚNG</h5>-->
         </ul>
         <ul class="drop-col">
           <ul class="cate">Hỗ trợ</ul>
@@ -135,12 +135,16 @@
       <img class="icon-search" src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_tim_kiem.svg">
       <input placeholder="Tìm kiếm...">
     </div>
-    <div class="icon">
+    <div class="icon hover" [routerLink]="['/favorite']">
       <img src="assets/img/icons8-favorite-100.png">
     </div>
-    <div class="icon" [routerLink]="['/checkout']">
-      <p class="items">{{lenghtCart}}</p>
-      <img src="assets/img/icons8-shopping-bag-100.png">
+    <div class="icon hover" [routerLink]="['/checkout']">
+      <svg aria-hidden="true" class="pre-nav-design-icon" focusable="false" viewBox="0 0 24 24" role="img" width="40px"
+           height="40px" fill="none">
+        <path stroke="currentColor" stroke-width="1.0"
+              d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"></path>
+      </svg>
+      <span class="items hover">{{lenghtCart}}</span>
     </div>
   </div>
 </div>

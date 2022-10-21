@@ -70,17 +70,6 @@
   width: 50%;
   height: 50px;
 }
-.total-prod{
-  margin-top: 10px;
-  color: #ff5f17;
-  font-size: 20px;
-}
-.delete{
-  background-color: black;
-}
-.delete:hover{
-  background-color: black;
-}
 .bottom{
   display: flex;
   justify-content: space-evenly;

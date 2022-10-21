@@ -1,0 +1,18 @@
+.header-favorite{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.body-favorite{
+  padding-left: 15px;
+  padding-right: 50px;
+  margin-bottom: 30px;
+}
+.item-favorite{
+  display: flex;
+  gap: 15px;
+}
+.item-img{
+  width: 200px;
+  height: 200px;
+}

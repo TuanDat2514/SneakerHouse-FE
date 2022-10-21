@@ -1,15 +1,15 @@
 .wrapper{
-    width: 100%;
-    min-height: 500px;
-    height: auto;
-    text-align: center;
+  width: 100%;
+  min-height: 500px;
+  height: auto;
+  text-align: center;
 }
-.login{
+.register{
   width: 25%;
   margin-left: 37%;
   padding: 30px;
 }
-.header-login img{
+.header-register img{
   width: 100px;
 }
 .input{
