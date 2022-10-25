@@ -38,8 +38,16 @@ export class CheckoutComponent implements OnInit {
   }
   submitDiscount(i:any){
     this.cartService.getDiscount(i).subscribe(res=>{
-      this.discount=res;
-      this.checkout=this.checkout-(this.checkout*this.discount.discount/100);
+      if(!this.discount) {
+        this.discount = res;
+        this.checkout = this.checkout - (this.checkout * this.discount.discount / 100);
+      }else {
+        let i=res;
+        if(i.id !== this.discount?.id){
+          this.discount = i;
+          this.checkout = this.checkout - (this.checkout * this.discount.discount / 100);
+        }
+      }
     })
   }
   submitCheckout(){

@@ -27,6 +27,10 @@ export class CartService {
   addDetail(detail:any){
     return this.http.post(URL.URL+environment.POST_DETAIL_CART,detail,{observe:"response"});
   }
+
+  updateCart(id_cart:number,cart:any){
+  }
+
   deleteDetail(id_detail:any):Observable<any>{
     return this.http.delete(URL.URL+environment.DELETE_DETAIL_CART+id_detail,{observe:"response"});
   }

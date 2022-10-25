@@ -1,1 +1,84 @@
-<p>shipping works!</p>
+<div class="col">
+  <div class="left">
+    <div class="shipment-details">
+      <form [formGroup]="formDelivery">
+      <div class="title text-uppercase">
+        thông tin giao hàng
+      </div>
+        <input class="input-delivery" placeholder="Họ tên người nhận" formControlName="consignee"><br>
+        <input class="input-delivery" placeholder="Số điện thoại" formControlName="consignee_phone"><br>
+        <input class="input-delivery" placeholder="Địa chỉ" formControlName="delivery_address"><br>
+        <div class="title text-uppercase">
+          phương thức giao hàng
+        </div>
+        <div class="row1 padding-row1 padding-row">
+          <div>
+            <input id="delivery" type="checkbox" formControlName="delivery_method">
+            <label for="delivery"> Giao hàng nhanh</label>
+          </div>
+          <p>30,000 VND</p>
+        </div>
+        <div class="title text-uppercase">
+          phương thức thanh toán
+        </div>
+        <div class="row1 padding-row1 padding-row">
+          <div>
+            <input id="payment-direct" type="radio" name="payment_method" value="1" [(ngModel)]="payment_method" [ngModelOptions]="{standalone: true}">
+            <label for="payment-direct"> Thanh toán trực tiếp khi giao hàng</label>
+          </div>
+        </div>
+        <div class="row1 padding-row1">
+          <div>
+            <input id="payment-ATM" type="radio" name="payment_method" value="2" [(ngModel)]="payment_method" [ngModelOptions]="{standalone: true}">
+            <label for="payment-ATM"> Thanh toán bằng thẻ quốc tế và nội địa (ATM)</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="right">
+    <div class="checkout">
+      <div class="title text-uppercase title-checkout">đơn hàng</div>
+      <div class="divider" style="background-color: #111111;height: 2px"></div>
+      <ng-container *ngFor="let item of listItem">
+        <div class="item">
+          <div class="info-item">
+            <div class="">{{item.name}} - {{item.color|uppercase}}</div>
+            <div class="row-bottom">
+              <div class="select info-size">Size {{item.size}}<br>
+              </div>
+              <div class="select info-amount">x{{item.quantity}}<br>
+              </div>
+            </div>
+          </div>
+          <div class="right-item">
+            <div class="">
+              {{item.total_prod*1000| currency:'VND':' ':'1.'}} VND
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="dis-check">
+        <div class="row1">
+          <div class="text-row">Đơn hàng</div>
+          <div class="total">{{cart.subtotal*1000| currency:'VND':' ':'1.'}} VND</div>
+        </div>
+        <div class="row1">
+          <div class="text-row">Giảm giá</div>
+          <div class="discount">{{cart.discount}}%</div>
+        </div>
+        <div class="row1">
+          <div class="text-row">Phí vận chuyển</div>
+          <div class="discount">0</div>
+        </div>
+      </div>
+      <div class="row1 dis-check sub-total">
+        <div class="text-uppercase text2">tổng cộng</div>
+        <div class="sub text2">{{cart.total*1000| currency:'VND':' ':'1.'}} VND</div>
+      </div>
+      <div class="btn-submit-order">
+        <button class="btn-orange text-uppercase" (click)="abc()">hoàn tất đặt hàng</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,3 +35,11 @@ export interface Brand{
   products:Product[],
   size:any[]
 }
+export interface Shipping{
+  id:number,
+  consignee:string,
+  consignee_phone:string,
+  delivery_address:string,
+  delivery_method:string,
+  payment_method:string
+}

@@ -1,9 +1,8 @@
 .col{
   margin-top: 15px;
   display: flex;
-  padding: 15px;
+  padding: 15px 40px 15px 15px;
   gap: 20px;
-
 }
 .left{
   width: 66.66666667%;

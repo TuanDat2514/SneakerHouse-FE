@@ -67,8 +67,8 @@
         <div class="text-uppercase text2">tạm tính</div>
         <div class="sub text2">{{checkout*1000| currency:'VND':' ':'1.'}} VND</div>
       </div>
-      <div class="btn-goShipping" (click)="submitCheckout()">
-        <button class="btn-orange text-uppercase">tiếp tục</button>
+      <div class="btn-goShipping" >
+        <button class="btn-orange text-uppercase" [routerLink]="['/shipping']" (click)="submitCheckout()">tiếp tục</button>
       </div>
     </div>
   </div>

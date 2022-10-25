@@ -34,7 +34,10 @@ export const environment = {
   GET_USER:"user/getUser/",
 
   //discount
-  GET_DISCOUNT:"discount/getDiscount"
+  GET_DISCOUNT:"discount/getDiscount",
+
+  //shipping
+  POST_SHIPPING:"shipping/add"
 };
 
 

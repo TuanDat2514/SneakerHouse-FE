@@ -14,7 +14,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ModalCartComponent } from './component/modal-cart/modal-cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -51,7 +51,8 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
         BrowserAnimationsModule,
         SwiperModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [
   ],
