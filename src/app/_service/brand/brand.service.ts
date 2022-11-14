@@ -17,5 +17,8 @@ export class BrandService {
   getSizeBrand(id_brand:string,gender:number){
     return this.http.get(URL.URL+environment.GET_SIZE_BRAND_BY_GENDER+id_brand+"?gender="+gender);
   }
+  getBrandAll(){
+    return this.http.get(URL.URL+environment.GET_BRAND_ALL);
+  }
 
 }

@@ -17,4 +17,7 @@ export class ProductService {
   getProdbyId(id_prod:any):Observable<any>{
     return this.http.get(URL.URL+environment.GET_PRODUCT_BY_ID+id_prod);
   }
+  getProdbyGender(gender:any):Observable<any>{
+    return this.http.get(URL.URL+environment.GET_PRODUCT_BY_GENDER + "gender=" + gender);
+  }
 }

@@ -1,6 +1,6 @@
 export const URL={
- //URL: "http://localhost:8080/",
-  URL: "http://10.0.11.103:8080/"
+  URL: "http://localhost:8080/",
+  //URL: "http://10.0.11.103:8080/"
 }
 
 export const environment = {
@@ -8,10 +8,13 @@ export const environment = {
   //product
   PRODUCT_ALL:"product/all",
   GET_PRODUCT_BY_ID:"product/getProdbyId/",
+  GET_PRODUCT_BY_GENDER:"product/getProduct?",
 
   //brand
   GETBRANDBYID:"brand/getBrand/",
   GET_SIZE_BRAND_BY_GENDER:"size/getSizebyGender/",
+  GET_BRAND_ALL:"brand/all",
+
 
   //stock
   GETSTOCKPRODUCT:"stock/stockProduct/",

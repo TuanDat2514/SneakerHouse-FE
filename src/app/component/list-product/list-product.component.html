@@ -1,8 +1,8 @@
 <div class="filter">
   <ul class="category">
-    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='all'" (click)="changeCategory('all')">Tất cả</li>
-    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='men'" (click)="changeCategory('men')">Nam</li>
-    <li class="li" [class.selectedCategory]="category==='women'" (click)="changeCategory('women')">Nữ</li>
+    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='all'" (click)="changeCategory('all',2)">Tất cả</li>
+    <li class="li" style="border-right: #919090 1px solid" [class.selectedCategory]="category==='men'" (click)="changeCategory('men',1)">Nam</li>
+    <li class="li" [class.selectedCategory]="category==='women'" (click)="changeCategory('women',0)">Nữ</li>
   </ul>
   <div class="btn-filter" (click)="openFilter()">
     <button class="">Lọc</button>

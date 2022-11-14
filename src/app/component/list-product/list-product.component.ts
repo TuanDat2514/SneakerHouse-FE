@@ -12,14 +12,15 @@ export class ListProductComponent implements OnInit {
   constructor(private routes:Router,private productService:ProductService) {}
   category='all';
 
-
   ngOnInit(): void {
+    this.getProdAll();
+  }
+  getProdAll(){
     this.productService.getListProduct().subscribe(res=>{
       this.listProduct=res;
       console.log(this.listProduct);
     })
   }
-
   openFilter() {
     let i = document.getElementById("btn-filter") as HTMLElement;
     i.style.width = "400px";
@@ -36,7 +37,17 @@ export class ListProductComponent implements OnInit {
     this.productService.product$.next(item);
     this.routes.navigate(['/detail-product',item.id_product]);
   }
-  changeCategory(cate:string){
+  changeCategory(cate:string,gender:any){
     this.category=cate;
+    this.prodbyGender(gender);
+  }
+  prodbyGender(gender:any){
+    if(gender == 2){
+      this.getProdAll();
+    }else {
+      this.productService.getProdbyGender(gender).subscribe(res =>{
+        this.listProduct=res;
+    })
+    }
   }
 }

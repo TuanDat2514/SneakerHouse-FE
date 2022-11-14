@@ -12,13 +12,12 @@
   cursor: pointer;
 }
 .filters {
-  display: flex;
-  gap: 5%;
+  display: inline;
+  margin-right: 10px;
   height: 40px;
 
 }
 .filter{
-  padding-left: 10px;
 }
 .chips-filters {
   border: none;
@@ -64,4 +63,22 @@
   margin-left: 20px;
   display: flex;
   gap: 10px;
+}
+.btn-apply{
+  position: fixed;
+  bottom: 0;
+  width: 400px;
+  padding: 10px 15px 10px 15px;
+  margin-left: 0!important;
+  padding-right: 20px;
+  height: 64px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+.btn-apply button{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.padding-left{
+  padding-left: 10px;
 }

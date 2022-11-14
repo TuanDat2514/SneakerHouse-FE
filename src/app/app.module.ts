@@ -23,6 +23,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
+import { CurrencyPipe } from './pipe/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
     DashboardComponent,
     LoginAdminComponent,
     ShippingComponent,
+    CurrencyPipe,
   ],
     imports: [
         BrowserModule,
